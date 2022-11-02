@@ -82,6 +82,10 @@ a {
 a:hover > span {
     text-decoration: underline;
 }
+h1 {
+    font-size: 40px;
+    line-height: 50px;
+}
 .container {
     margin: 0 auto;
     width: 1320px;
@@ -157,6 +161,7 @@ footer {
     left: 0;
     right: 0;
     cursor: pointer;
+    z-index: 1;
 }
 .modal {
     background: white;
@@ -166,7 +171,7 @@ footer {
     width: 400px;
     top: 200px;
     padding: 40px;
-    z-index: 10;
+    z-index: 1;
 }
 .close {
     position: absolute;
@@ -191,6 +196,24 @@ footer {
 }
 #citymodal p:hover {
     text-decoration: underline wavy #5e7562;
+}
+#citysearch {
+    border: 1px solid #bfd0c8;
+    color: blue;
+    width: 100%;
+    display: block;
+    padding: 5px 15px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+#citysearch::placeholder {
+    color: rgba(94, 117, 98, .5);
+    font-style: italic;
+}
+.columns {
+    columns: 185px 2;
+    gap: 30px;
 }
 
 /* header */
@@ -239,7 +262,7 @@ header form {
 header input {
     padding: 0 20px;
 }
-button {
+/*button {
     border-radius: 6px;
     border: 1px solid rgba(86, 75, 75,.4);
     height: 100%;
@@ -249,7 +272,7 @@ button {
 button > img {
     height: 30px;
     padding-top: 5px;
-}
+}*/
 .liner {
         height: 0;
         border-top: 1px solid rgba(86, 75, 75,.2);
@@ -282,7 +305,7 @@ button > img {
     padding-top: 15px;
 }
 .topmenu {
-    padding: 10px 0 10px 150px;
+    padding: 10px 0 10px 320px;
 }
 .topmenu a {
     display: inline-block;
@@ -299,7 +322,13 @@ button > img {
 .topmenu a:first-child::before {
     display: none;
 }
-
+.topmenu .current {
+    cursor: default;
+    font-weight: 600;
+}
+.topmenu .current:hover span {
+    text-decoration: none;
+}
 
 /* action */
 .action {
@@ -390,7 +419,7 @@ button > img {
     margin: 0 auto;
     position: relative;
 }
-.slider_desk {
+.slider_desk { /*здесь уменьшать размеры слайдера для адаптации, или сделать картинку бэкграундом (но нужно при этом следить за пропорциями), или прописать ширину и высоту картике 100%, чтобы она вписывалась в блок*/
     border: 1px solid black;
     width: 419px;
     height: 572px;
@@ -454,7 +483,7 @@ button > img {
     justify-content: center;
     gap: 10px;
     z-index: 1;
-}
+,, }
 .slider_points span {
 	flex: none;
     border-radius: 50%;
@@ -473,6 +502,58 @@ button > img {
 .slider_points:hover span {
     opacity: 1;
 }
+
+/*catalog*/
+.catalog .container {
+    display: flex;
+    gap: 20px;
+}
+.catalog aside {
+    width: 300px;
+    background: rgba(94, 117, 98);
+    color: white;
+}
+.catmenu {
+    padding: 20px;
+    /*margin-top: -50px;*/
+}
+.catmenu a {
+    color: white;
+}
+.catmenu p{
+    font-weight: 600;
+    font-size: 26px;
+    
+}
+.catmenu ul {
+    margin-top: 10px;
+}
+.catmenu > ul > li {
+    padding: 5px 30px 5px 0;
+    border-top: 1px dashed white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.catmenu ul ul {
+    margin: 0;
+    position: relative;
+    left: 30px;
+    font: 18px/28px 'Jost';
+}
+.catmenu ul ul::before {
+    content: '\23f7';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    transition: transform 1s;
+}
+.catmenu .open::before {
+    transform: rotateX(180deg);
+}
+.gift::after {
+   content: '🎁 ';
+}
+
 
 /*content block*/
 .logo3 {
