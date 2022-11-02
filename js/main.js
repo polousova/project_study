@@ -27,10 +27,24 @@ function actiontimer() {
     delta = Math.floor(delta/60);
     let hours = delta % 24;
     let days = Math.floor(delta/24);
-    let helpstr = `<span>${days}</span> ${multiple(days, 'день', 'дня', 'дней')} <span>${addZero(hours)}</span> ${multiple(hours, 'час', 'часа', 'часов')} <span>${addZero(minutes)}</span> ${multiple(minutes, 'минута', 'минуты', 'минут')} <span>${addZero(seconds)}</span> ${multiple(seconds, 'секунда', 'секунды', 'секунд')}`;
-    $('.actiontimer').html(helpstr);
+    $('.actiontimer span').eq(-1).html(addZero(seconds));
+    $('.actiontimer span').eq(-2).html(addZero(minutes));
+    $('.actiontimer span').eq(-3).html(addZero(hours));
+    $('.actiontimer span').eq(-4).html(days);
+    /*let helpstr1 = `${days} ${multiple(days, 'день', 'дня', 'дней')}`;
+    $('.actiontimer .days').html(helpstr);
+    return res;*/
+    let helpstrsec = `${addZero(seconds)}`;
+    $('.actiontimer .seconds').html(helpstrsec);
+    let helpstrmin = `${addZero(minutes)}`;
+    $('.actiontimer .minutes').html(helpstrmin);
+    let helpstrhrs = `${addZero(hours)}`;
+    $('.actiontimer .hours').html(helpstrhrs);
+    let helpstrdays = `${days}`;
+    $('.actiontimer .hours').html(helpstrdays);
     return res;
 }
+
 function addZero(num) {
     if (num < 10) {
         num = '0' + num;
