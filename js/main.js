@@ -65,7 +65,7 @@ function multiple(num, word1, word2, word3) {
 /* on ready */
 $(function(){
     $('.topmenu a').each(function(){
-        if (this.href == location.href.split('#')[0]) this.className = 'current';
+        if (this.href == location.href.split('#')[0]) this.className = 'current'; /*динамически добавляет class="current". Если мы находимся на текущей странице (this.href = location.href), к текущему href добавляется класс current*/
     });
     
     $('#city span').html(localStorage.getItem('city') || 'Москва');
