@@ -327,6 +327,7 @@ button > img {
 .topmenu a::before {
     content: '|';
     padding-right: 20px;
+    font-weight: normal;
 }
 .topmenu a:first-child::before {
     display: none;
@@ -809,7 +810,7 @@ button > img {
 .logo2 > img {
     display: block;
 }
-.leaf {
+/*.leaf {
     display: inline-block;
     height: 40px;
     color: rgb(86, 75, 75);
@@ -822,7 +823,7 @@ button > img {
     height: 24px;
     background-size: 24px;
     padding-left: 30px;
-}
+}*/
 .bath {
     line-height: 20px;
 }
@@ -844,6 +845,33 @@ button > img {
     display: block;
     height: 50px;
     padding: 40px 20px;
+}
+.col1 li {
+    padding: 5px 0;
+}
+.leaf {
+    display: inline-block ;
+    vertical-align: top;
+    padding-left: 32px;
+    margin-right: 10px;
+    line-height: 22px;
+    position: relative;
+    color: rgb(86, 75, 75);
+}
+.leaf::before {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 10px;
+    content: '';
+    background: url('../images/leaf.svg') no-repeat left center;
+    height: 22px;
+    background-size: 22px;
+    padding-right: 20px;
+}
+.col1 h3{
+    margin-bottom: 10px;
 }
 .col2 li {
     font: bold 20px/30px 'Jost';
