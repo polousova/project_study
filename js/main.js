@@ -26,9 +26,9 @@ let startbasket = [
     }
 ];
 let priceInUSD = 0;
-let rateUSD;
+//let rateUSD = 0;
 
-getCurrency1();
+//getCurrency1();
 
 /* functions */
 
@@ -37,7 +37,7 @@ function getCurrency1() {
     xhr.open('GET', 'https://www.cbr-xml-daily.ru/daily_json.js');
     xhr.onreadystatechange = function() {
         if ((xhr.readyState == 4) && (xhr.status == 200)) {
-            //document.getElementById('currency1').innerHTML = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2) + ' рублей за доллар';
+            document.getElementById('USDrate').innerHTML = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2) + ' Курс на сегодня ';
                 rateUSD = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
                 console.log(rateUSD);
         }
@@ -113,6 +113,7 @@ function orderReCount() {
         let dollarSum = sum / rateUSD;
         allsum += sum;
         $(this).find('.sum').html(sum);
+        $(this).find('.sumUSD').html(dollarSum);
     });
     point.find('.allsum span').html(allsum);
 }
