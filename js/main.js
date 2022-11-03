@@ -1,5 +1,5 @@
 /* variables */
-let citylist = ['Москва', 'Немосква', 'Караганда', 'Магадан', 'Люберцы', 'Севастополь', 'Ярославль', 'Вологда', 'Владивосток', 'Барнаул', 'Петрозаводск', 'Самара', 'Саратов', 'Тверь', 'Вашингтон', 'Париж', 'Пермь', 'Екатеринбург', 'Новосибирск', 'Калининград'];
+let citylist = ['Москва', 'Караганда', 'Магадан', 'Люберцы', 'Севастополь', 'Ярославль', 'Вологда', 'Владивосток', 'Барнаул', 'Петрозаводск', 'Самара', 'Саратов', 'Тверь', 'Вашингтон', 'Париж', 'Пермь', 'Екатеринбург', 'Новосибирск', 'Калининград'];
 let rangemin = 0;
 let rangemax = 300;
 let startbasket = [
@@ -25,8 +25,26 @@ let startbasket = [
         link: ''
     }
 ];
+let priceInUSD = 0;
+let rateUSD;
+
+getCurrency1();
 
 /* functions */
+
+function getCurrency1() {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://www.cbr-xml-daily.ru/daily_json.js');
+    xhr.onreadystatechange = function() {
+        if ((xhr.readyState == 4) && (xhr.status == 200)) {
+            //document.getElementById('currency1').innerHTML = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2) + ' рублей за доллар';
+                rateUSD = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
+                console.log(rateUSD);
+        }
+    };
+    xhr.send();
+}
+
 function getModalWindow(idname) {
     $('body').append('<div class="screener"></div><div class="modal" id="'+idname+'"><button type="button" class="close">&times;</button></div>');
     $('.screener, .modal .close').click(dropModalWindow);
@@ -92,6 +110,7 @@ function orderReCount() {
         let price = +$(this).find('.price').html();
         let qty = +$(this).find('.qty strong').html();
         let sum = qty * price;
+        let dollarSum = sum / rateUSD;
         allsum += sum;
         $(this).find('.sum').html(sum);
     });
@@ -148,6 +167,29 @@ $(function(){
     });
     
     if ($('.catmenu li li').length) {
+        if ($('.catmenu.simple').length) {
+            $('.catmenu > ul > li').click(function(e) {
+                if (e.target.tagName != 'A') {
+                    $('.open').removeClass('open');
+                    $(this).find('ul').addClass('open');
+                } else {
+                    here.find('li').slideDown(1000, function() {
+                        here.addClass('open');
+                    });
+                }
+            });
+        } else {
+            if ($('.catmenu .open').length) {
+                $('.catmenu .open li').slideUp(1000, function() {
+                    $('.catmenu .open').removeClass('open');
+                });
+            };
+        };
+    };
+
+    //removed accordeon.simple down
+
+    if ($('.catmenu li li').length) {
         if ($('.catmenu.simple').length) { // если мы хотим простейший аккордеон без сложной анимации
             $('.catmenu > ul > li').click(function(e){
                 if (e.target.tagName != 'A') {
@@ -184,20 +226,6 @@ $(function(){
             });
         }
     }
-    
-    // if ($('.querymenu').length) {
-        // $( "#acco" ).accordion({
-            // header: ".acco_h",
-            // icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
-        // });
-        // $( "#toggle" ).button().on( "click", function() {
-            // if ( $( "#acco" ).accordion( "option", "icons" ) ) {
-                // $( "#acco" ).accordion( "option", "icons", null );
-            // } else {
-                // $( "#acco" ).accordion( "option", "icons", icons );
-            // }
-        // });
-    // }
     
     if ($('#slider-range').length) {
         $('#slider-range').slider({
@@ -387,5 +415,77 @@ $(function(){
         });
     }
     
+    
+
     console.log('just loaded');
 });
+
+
+/*if ($('.catmenu li li').length) {
+        if ($('.catmenu.simple').length) { // если мы хотим простейший аккордеон без сложной анимации
+            $('.catmenu > ul > li').click(function(e){
+                if (e.target.tagName != 'A') {
+                    $('.open').removeClass('open'); // отнимаем класс open у ранее открытого вложенного списка
+                    $(this).find('ul').addClass('open'); // добавляем класс open вложенному списку в кликнутом пункте
+                } else { // если раскрытого вложенного списка не было...
+                    here.find('li').slideDown(1000, function(){ // открываем пункты списка по нашему указателю
+                        here.addClass('open'); // и вешаем на него класс open
+                    });
+                });
+            
+                } else { // если раскрытого вложенного списка не было...
+                here.find('li').slideDown(1000, function(){ // открываем пункты списка по нашему указателю
+                    here.addClass('open'); // и вешаем на него класс open
+                });
+            }
+        } else {
+            if ($('.catmenu .open').length) { // если был раскрытый вложенный список...
+                $('.catmenu .open li').slideUp(1000, function(){ // прячем его пункты
+                    $('.catmenu .open').removeClass('open'); // затем убираем с него класс open
+                });
+            };
+        };
+    };
+        } else { // если мы хотим аккордеон с более красивой анимацией
+            $('.catmenu li li').slideUp(1); // скрываем все пункты второго уровня
+            $('.catmenu > ul > li').click(function(e){ // ловим клик на пункте первого уровня
+                if ((e.target.tagName != 'A') && (!$(this).find('.open').length)) { // если клик не был по ссылке и вложенный список в этом пункте уже не раскрыт...
+                    let here = $(this).find('ul'); // сохраняем указатель на вложенный список в кликнутом пункте 
+                    if (here.length) { // если в кликнутом пункте есть вложенный список...
+                        if ($('.catmenu .open').length) { // если был раскрытый вложенный список...
+                            $('.catmenu .open li').slideUp(1000, function(){ // прячем его пункты
+                                $('.catmenu .open').removeClass('open'); // затем убираем с него класс open
+                                here.find('li').slideDown(1000, function(){ // затем открываем пункты списка по нашему указателю
+                                    here.addClass('open'); // и вешаем на него класс open
+                                });
+                            });
+                        } else { // если раскрытого вложенного списка не было...
+                            here.find('li').slideDown(1000, function(){ // открываем пункты списка по нашему указателю
+                                here.addClass('open'); // и вешаем на него класс open
+                            });
+                        }
+                    } else {
+                        if ($('.catmenu .open').length) { // если был раскрытый вложенный список...
+                            $('.catmenu .open li').slideUp(1000, function(){ // прячем его пункты
+                                $('.catmenu .open').removeClass('open'); // затем убираем с него класс open
+                            });
+                        }
+                    }
+                }
+            });
+        }
+    }*/
+    
+    // if ($('.querymenu').length) {
+        // $( "#acco" ).accordion({
+            // header: ".acco_h",
+            // icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+        // });
+        // $( "#toggle" ).button().on( "click", function() {
+            // if ( $( "#acco" ).accordion( "option", "icons" ) ) {
+                // $( "#acco" ).accordion( "option", "icons", null );
+            // } else {
+                // $( "#acco" ).accordion( "option", "icons", icons );
+            // }
+        // });
+    // }
