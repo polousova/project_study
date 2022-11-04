@@ -25,8 +25,8 @@ let startbasket = [
         link: ''
     }
 ];
-let priceInUSD = 0;
-//let rateUSD = 0;
+
+let rateUSD;
 
 //getCurrency1();
 
@@ -37,7 +37,7 @@ function getCurrency1() {
     xhr.open('GET', 'https://www.cbr-xml-daily.ru/daily_json.js');
     xhr.onreadystatechange = function() {
         if ((xhr.readyState == 4) && (xhr.status == 200)) {
-            document.getElementById('USDrate').innerHTML = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2) + ' Курс на сегодня ';
+            document.getElementById('USDrate').innerHTML = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2) + ' Курс RUB/USD сегодня ';
                 rateUSD = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
                 console.log(rateUSD);
         }
@@ -104,18 +104,21 @@ function multiple(num, word1, word2, word3) {
 }
 
 function orderReCount() {
+    getCurrency1();
     let point = $('.table');
     let allsum = 0;
     point.find('tbody tr').each(function(){
         let price = +$(this).find('.price').html();
         let qty = +$(this).find('.qty strong').html();
         let sum = qty * price;
-        let dollarSum = sum / rateUSD;
+        //let dollarSum = sum / rateUSD;
+        //console.log(dollarSum);
         allsum += sum;
         $(this).find('.sum').html(sum);
-        $(this).find('.sumUSD').html(dollarSum);
+        //$(this).find('.sumUSD').html(dollarSum);
     });
     point.find('.allsum span').html(allsum);
+
 }
 function changeOrder(line, num){
     let newnum = +$(line).find('.qty strong').html() + num;
