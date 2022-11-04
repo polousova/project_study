@@ -534,17 +534,40 @@ button > img {
     background: rgba(94, 117, 98);
     color: white;
 }
+.catmenu > ul > li > a > span::before {
+    padding-right: 15px;
+}
+.bags::before {
+    content: "🛍";
+}
+.dekor::before {
+    content: "🕯";
+}
+.baskets::before {
+    content: '🧺';
+}
+.rugs::before {
+    content: '▨';
+ }
+.gift::before {
+   content: '🎁 ';
+}
+.pet::before{
+    content: "🐈";
+}
 .catmenu {
     padding: 20px;
-    /*margin-top: -50px;*/
 }
 .catmenu a {
     color: white;
 }
-.catmenu p{
+.catmenu p { 
     font-weight: 600;
     font-size: 26px;
-    
+}
+.catmenu p::before {
+    content: "☰";
+    padding-right: 15px;
 }
 .catmenu ul {
     margin-top: 10px;
@@ -571,14 +594,8 @@ button > img {
 .catmenu .open::before {
     transform: rotateX(180deg);
 }
-.gift::before {
-   content: '🎁 ';
-}
-.pet::before{
-    content: "🐈";
-}
 .catmenu li li {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 30px;
 }
 .catmenu.simple li li {
@@ -608,7 +625,7 @@ button > img {
     display: flex;
     flex-wrap: wrap;
     column-gap: 8px;
-    row-gap: 30px;
+    row-gap: 40px;
 }
 .cat-item {
     width: 460px;
@@ -679,9 +696,21 @@ button > img {
 .product {
     display: flex;
     gap: 30px;
+    margin: 10px 0 20px;
+}
+.offer h1 {
+    font: bold 32px/48px 'Jost';
+    text-transform: uppercase;
+}
+.offer p {
+    margin: 15px 0;
 }
 .images {
-    flex: 0 0 470px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    /*flex: 0 0 470px;*/
+    flex: 0 0 100px;
 }
 .bigimage {
     width: 450px;
@@ -689,23 +718,28 @@ button > img {
     /*display: flex;
     align-items: center;
     justify-content: center;*/
-    border: 1px solid blue;
+    border: 1px solid rgba(94, 117, 98,.6);
     padding: 9px;
 }
 .gallery {
-    width: 440px;
-    height: 50px;
-    margin-top: 20px;
-    padding: 0 15px;
-    position: relative;
+    /*width: 440px;
+    height: 50px;*/
+    width: 65px;
+    /*height: 520px;
+    position: relative;*/
+    margin: 10px;
+    padding: 10px;
+   
 }
 .gallery button {
-    width: 15px;
+   /*width: 15px;
     height: 50px;
-    position: absolute;
-    top: 0;
-    overflow: hidden;
     color: blue;
+    position: absolute;
+    top: 0;*/
+    overflow: hidden;
+    height: 25px;
+    width: 50px;
 }
 .gallery .disabled {
     cursor: default;
@@ -718,29 +752,41 @@ button > img {
     color: blue;
 }
 .gallery .gal_left {
-    left: 0;
+    /*left: 0;*/
+    align-self: center;
 }
 .gallery .gal_right {
-    right: 0;
+    /*right: 0;*/
+    align-self: center;
 }
 .gallery button span {
-    font: bold 50px/50px 'Roboto';
+    font: bold 20px/20px 'Jost';
     display: inline-block;
     margin-top: -9px;
 }
-.gallery > div {
+/*.gallery > div {
     width: 440px;
     height: 50px;
+    width: 100px;
+    height: 100px;
     overflow: hidden;
     position: relative;
-}
+}*/
 .gallery .rail {
     display: flex;
+    flex-direction: column;
     gap: 5px;
-    position: absolute;
+    justify-content: space-around;
+    margin: 20px 0;
+    /*position: absolute;
     top: 0;
-    left: 0;
-    height: 50px;
+    left: 0;*/
+    /*height: 50px;
+    height: 100px;*/
+}
+.rail > img {
+    border: 1px solid rgba(94, 117, 98, 0.5);
+    display: block;
 }
 .product .price {
     color: red;
@@ -860,7 +906,7 @@ button > img {
     position: relative;
     clip-path: circle(40%);
 }
-/* ========= gallery ==========*/
+/* ========= gallery на главной странице ==========*/
 .gall {
     display: grid;
     grid-template-areas: 'a b f' 'c d f';
