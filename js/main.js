@@ -1,26 +1,26 @@
 /* variables */
 let citylist = ['Москва', 'Караганда', 'Магадан', 'Люберцы', 'Севастополь', 'Ярославль', 'Вологда', 'Владивосток', 'Барнаул', 'Петрозаводск', 'Самара', 'Саратов', 'Тверь', 'Вашингтон', 'Париж', 'Пермь', 'Екатеринбург', 'Новосибирск', 'Калининград'];
 let rangemin = 0;
-let rangemax = 300;
+let rangemax = 1000;
 let startbasket = [
     {
         id: 1,
-        name: 'ZHABA',
-        price: 2000,
+        name: 'Сумка',
+        price: 100,
         quantity: 100,
         link: ''
     },
     {
         id: 2,
-        name: 'GADIUKA',
-        price: 3000,
+        name: 'Коврик',
+        price: 200,
         quantity: 10,
         link: ''
     },
     {
         id: 111,
-        name: 'Cangaroo',
-        price: 15500,
+        name: 'Домик для кошки',
+        price: 500,
         quantity: 1,
         link: ''
     }
@@ -37,7 +37,7 @@ function getCurrency1() {
     xhr.open('GET', 'https://www.cbr-xml-daily.ru/daily_json.js');
     xhr.onreadystatechange = function() {
         if ((xhr.readyState == 4) && (xhr.status == 200)) {
-            document.getElementById('USDrate').innerHTML = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2) + ' Курс RUB/USD сегодня ';
+            document.getElementById('USDrate').innerHTML = ' Курс RUB/USD сегодня: ' + JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
                 rateUSD = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
                 console.log(rateUSD);
         }
@@ -344,7 +344,7 @@ $(function(){
         if (!basket) basket = [];
         basket.push(...startbasket);
         for (let item of basket) {
-            let hlpstr = '<tr data-id="'+item.id+'"><th scope="row" class="index">'+count+'</th><td class="name"><a href="'+item.link+'">'+item.name+'</a></td><td class="qty"><span class="minus">&minus;</span><strong>'+item.quantity+'</strong><span class="plus">&plus;</span></td><td class="price">'+item.price+'</td><td class="sum"></td><td class="delete icon">&#xe906;</td></tr>';
+            let hlpstr = '<tr data-id="'+item.id+'"><th scope="row" class="index">'+count+'</th><td class="name"><a href="'+item.link+'">'+item.name+'</a></td><td class="qty"><span class="minus">&minus;</span><strong>'+item.quantity+'</strong><span class="plus">&plus;</span></td><td class="price">'+item.price+'</td><td class="sum"></td><td class="delete icon">❌</td></tr>';
             point.append(hlpstr);
             count++;
         }
