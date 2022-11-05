@@ -534,26 +534,9 @@ button > img {
     background: rgba(94, 117, 98);
     color: white;
 }
-.catmenu > ul > li > a > span::before {
-    padding-right: 15px;
-}
-.bags::before {
-    content: "🛍";
-}
-.dekor::before {
-    content: "🕯";
-}
-.baskets::before {
-    content: '🧺';
-}
-.rugs::before {
-    content: '▨';
- }
-.gift::before {
+.gift::after {
    content: '🎁 ';
-}
-.pet::before{
-    content: "🐈";
+   padding-left: 15px;
 }
 .catmenu {
     padding: 20px;
@@ -799,14 +782,14 @@ button > img {
 
 /* =========== order ========== */
 .order .icon {
-    font-family: 'icomoon' !important;
+    /*font-family: 'icomoon' !important;*/
     cursor: pointer;
 }
 .table tfoot th {
     border-bottom: none;
 }
 .table .allsum span {
-    color: red;
+    color: #a20a0a;
 }
 .table .allsum span::after {
     content: '\20\20BD'
@@ -838,15 +821,15 @@ button > img {
     user-select: none;
 }
 .table .qty span {
-    border-radius: 50%;
+    border-radius: 2px;
     border: 1px solid black;
-    background: blue;
+    background: #5e7562;
     color: white;
     width: 20px;
     height: 20px;
     display: inline-block;
     text-align: center;
-    line-height: 20px;
+    line-height: 18px;
     cursor: pointer;
     user-select: none;
 }
@@ -856,10 +839,6 @@ button > img {
 .table .qty .plus {
     margin-left: 10px;
 }
-#order {
-    height: 30px;
-    text-align: center;
-}
 .container.empty,
 .empty .container {
     display: none;
@@ -867,6 +846,25 @@ button > img {
 .empty .container.empty {
     display: block;
 }
+#order {
+    height: 30px;
+    text-align: center;
+}
+.table tfoot {
+    line-height: 70px;
+}
+/*=========USD rate ============*/
+#USDrate {
+    display: block;
+    font: bold 16px/30px "Jost";
+    width: 20%;
+    margin: 10px 0 10px auto;
+    padding: 5px;
+    color: #A20A0A;
+    border: 4px solid rgba(94, 117, 98, .5);
+    border-radius: 5px;
+}
+
 
 /* ========== calendar ===========*/
 #calendar {
