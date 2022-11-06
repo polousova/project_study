@@ -415,7 +415,7 @@ header button > img {
     text-align: center;
 }
 .extend {
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 /* ============= slider ============*/
@@ -1170,15 +1170,14 @@ header button > img {
 .startSaleP {
     font-size: 24px;
     line-height: 30px;
-    width: 200px;
-}
-.startSale {
-    gap: 8px;
 }
 .startSale span {
     width: 40px;
     font-size: 16px;
     line-height: 24px;
+}
+.startSale {
+    gap: 8px;
 }
 .textTimer span {
     width: 40px;
@@ -1186,7 +1185,7 @@ header button > img {
     line-height: 24px;
 }
 .extend {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 header button {
     border-radius: 6px;
@@ -1229,9 +1228,13 @@ header button > img {
 
 /* =========== Каталог page =========*/
 .catalog article {
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
     row-gap: 20px;
+}
+.catalog .container {
+    justify-content: space-around;
 }
 
 /* =============contact page ============*/
@@ -1442,16 +1445,23 @@ header button > img {
 .action {
     padding: 5px;
 }
+.blackFriday{
+    gap: 5px;
+    justify-content: center;
+    }
 .blackFriday p {
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 18px;
-        gap: 20px;
+    display: inline-block;
+    width: 60%; 
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    padding-left: 0;    
     }
 .startSaleP {
-        font-size: 16px;
-        line-height: 18px;
-        font-weight: 600;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
     }
 .startSale span {
         width: 24px;
@@ -1464,7 +1474,7 @@ header button > img {
         line-height: 16px;
     }
 .extend {
-        margin-right: 5px;
+        margin-right: 10px;
     }
  .article {
         font: 18px/26px 'Jost';
@@ -1506,6 +1516,23 @@ header button > img {
     gap: 30px; 
  }
 
+
+/*========== Catalog page ==========*/
+/*.smaller img {
+    width: 320px;
+} 
+.bigger > img {
+    width: 100px;
+}
+.bigger {
+    width: 320px;
+    justify-content: space-around;
+}
+.catalog article h3 {
+    display: inline-block;
+    width: 320px;
+}*/
+
  /* ======= product page =========*/
  .product .price {
     font-size: 16px;
@@ -1541,14 +1568,32 @@ header button > img {
     margin: 20px;
 }
 .address {
-    width: 280px;
+    width: 250px;
 }
 .sendMessage {
-    width: 370px;
+    width: 390px;
 }
 .address > img {
     display: block;
     margin: 30px auto 20px;
+}
+.sendMessage textarea {
+    height: 80px;
+}
+.sendMessage label {
+    font: bold 14px/24px 'Jost';
+    margin-top: 15px;
+}
+.sendMessage button {   
+    height: 30px;
+    font-size: 14px;
+}
+.address h3 {
+    font: bold 14px/24px 'Jost';
+    margin: 20px 0 10px;
+}
+.address > ul > li {
+    font: 14px/20px 'Jost';
 }
 }
 
