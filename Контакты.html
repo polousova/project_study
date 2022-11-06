@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///Users/dina/Frontend/GitHub/project_study/contacts.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Контакты</title>
+        <link rel="icon" type="image/x-icon" href="file:///Users/dina/Frontend/GitHub/project_study/images/favicon.png">
+        
+        <link rel="stylesheet" href="./Контакты_files/jquery-ui.css">
+        <link rel="stylesheet" href="./Контакты_files/styles.css">
+        
+        <script defer="" src="./Контакты_files/jquery-3.6.1.min.js"></script>
+        <script defer="" src="./Контакты_files/jquery-ui.min.js"></script>
+        <script defer="" src="./Контакты_files/slider.js"></script>
+        <script defer="" src="./Контакты_files/main.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <section class="container">
+                <div id="city" title="Если ваш город определен неправильно, нажмите для выбора правильного города">Ваш город: 
+                    <span>Москва</span>
+                </div>
+            </section>
+            <section class="container">
+                <div class="wrapper_logo">
+                    <div class="logo_line">
+                     <!--блок лого, строка поиска, вход, корзина-->
+                        <a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#" class="logo"><img src="./Контакты_files/Jute&amp;mood.svg" alt="logo"></a>
+                    </div>
+                    <div class="line">
+                        <form action="file:///Users/dina/Frontend/GitHub/project_study/contacts.html">
+                            <input type="text" placeholder="Поиск">
+                                <button type="submit"><img src="./Контакты_files/search.svg" alt="search"></button>
+                        </form>
+                        <div class="login_cart">
+                            <div>
+                                <a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#" class="login"><img src="./Контакты_files/login.svg" alt="login"></a>
+                                <label>Вход</label>
+                            </div>
+                            <div>
+                                <a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#" class="cart"><img src="./Контакты_files/cart_main.svg" alt="cart"></a>
+                                <label>Корзина</label>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </section>
+            <section class="container">
+                <nav class="topmenu">
+                    <a href="file:///Users/dina/Frontend/GitHub/project_study/index.html" target="_blank"><span>Главная страница</span></a>
+                    <a href="file:///Users/dina/Frontend/GitHub/project_study/catalog.html" target="_blank"><span>Каталог</span></a>
+                    <a href="file:///Users/dina/Frontend/GitHub/project_study/product.html"><span>Товар</span></a>
+                    <a href="file:///Users/dina/Frontend/GitHub/project_study/order.html"><span>Корзина</span></a>
+                    <a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html" class="current"><span>Контакты</span></a>
+                </nav>
+            </section>
+        </header>
+        
+        <main>
+            <section class="container">
+               <div class="sendUsMessage">
+                    <section class="address">
+                        <img src="./Контакты_files/group.jpg" alt="contacts">
+                        <h3>Адрес</h3>
+                            <ul>
+                                <li>Москва, Российская Федерация</li>
+                                <li>Кремль, Ивановская площадь</li>
+                            </ul>
+
+                            <h3>Телефон</h3>
+                            <ul class="phone">
+                                <li>+7 123 4567890</li>
+                                <li>+7 098 7654321</li>
+                            </ul>
+
+                            <h3>Онлайн сервисы</h3>
+                            <ul class="online">
+                                <li class="web">www.jm.ru</li>
+                                <li class="email">sitename@jm.ru</li>
+                                <li class="insta">#best_shopping</li>
+                            </ul>
+                    </section>
+
+                    <section class="sendMessage">
+                        <h1>Форма обратной связи</h1>
+                        <form action="file:///Users/dina/Frontend/GitHub/project_study/contacts.html" method="POST">
+                            <fieldset>
+                                <label>Ваше имя</label><br>
+                                <input type="text" placeholder="Ваше имя" required=""><br>
+
+                                <label>Ваш e-mail</label><br>
+                                <input type="email" placeholder="...@... " required=""><br>
+
+                                <label>Выберите тему обращения</label><br>
+                                <select name="feedback" required="">
+                                    <option value="1" disabled="" selected="">Выберите...</option>
+                                    <option value="2">Уточнить статус заказа</option>
+                                    <option value="3">Изменить способ доставки</option>
+                                    <option value="4">Стать поставщиком</option>
+                                    <option value="5">Претензия</option>
+                                    <option value="6">Вопрос</option>
+                                </select><br>
+
+                                <label>Ваше обращение</label><br>
+                                <textarea placeholder="Текст вашего обращения"></textarea><br>
+                                <button type="button">Submit</button>
+                            </fieldset>
+                        </form>
+                    </section>
+                </div>    
+            </section>
+
+            <section class="container">
+                <div class="map">
+                    <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&amp;utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/?ll=37.618318%2C55.750123&amp;utm_medium=mapframe&amp;utm_source=maps&amp;z=15.88" style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс&nbsp;Карты — транспорт, навигация, поиск мест</a><iframe src="./Контакты_files/CCU668sxCC.html" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <section class="container">
+                <div class="wrapperFooter">
+                    <a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#" class="logo2"><img src="./Контакты_files/Jute&amp;mood2.svg" alt="logo"></a>
+                    <div class="info">
+                        <div class="col1">
+                            <h3><a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#"></a>Каталог</h3>
+                                 <ul>
+                                     <li><a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#" class="leaf">Сумки</a></li>
+                                     <li><a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#" class="leaf">Коврики</a></li>
+                                     <li><a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#" class="leaf">Корзины</a></li>
+                                     <li><a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#" class="leaf bath">Декор для ванной<br>и кухни</a></li>
+                                     <li><a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#" class="leaf">Домики для питомцев</a></li>
+                                 </ul>
+                       </div>
+                        
+                       <div class="col2">
+                            <ul>
+                                <li><a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#">Доставка и оплата</a></li>
+                                <li><a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#">Контакты</a></li>
+                                <li><a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#">Политика<br>конфиденциальности</a></li>
+                            </ul>
+                        </div>
+                       
+                        <div class="wrapperSocial">
+                            <h3>Мы в соцсетях</h3>
+                            <div class="social">
+                                <a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#"><img src="./Контакты_files/telegram.svg" alt="Telegram"></a>
+                                <a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#"><img src="./Контакты_files/vk.svg" alt="VK"></a>
+                                <a href="file:///Users/dina/Frontend/GitHub/project_study/contacts.html#"><img src="./Контакты_files/pinterest.svg" alt="Pinterest"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="container">
+                <p class="copy">Copyright © Dina Polousova 2022</p>
+            </section>
+        </footer>
+    
+
+</body></html>
