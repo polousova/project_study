@@ -118,10 +118,12 @@ button {
     content: '\e903';
 }*/
 .to_left::before {
-    content: '\e905';
+    content: '❮';
+    color: #5e7562;
 }
 .to_right::before {
-    content: '\e904';
+    content: '❯';
+    color: #5e7562;
 }
 
 /* ============== main ============*/
@@ -439,8 +441,8 @@ button > img {
     margin: 0 auto;
     position: relative;
 }
-.slider_desk { /*здесь уменьшать размеры слайдера для адаптации, или сделать картинку бэкграундом (но нужно при этом следить за пропорциями), или прописать ширину и высоту картике 100%, чтобы она вписывалась в блок*/
-    border: 1px solid black;
+.slider_desk { /*здесь уменьшать размеры слайдера для адаптации, или сделать картинку бэкграундом (но нужно при этом следить за пропорциями), или прописать ширину и высоту картинке 100%, чтобы она вписывалась в блок*/
+    border: 1px solid rgba(86,75, 75, .5);
     width: 419px;
     height: 572px;
     overflow: hidden;
@@ -449,7 +451,7 @@ button > img {
     background: #fff;
 }
 .slider_block {
-    border: 1px solid black;
+    border: 1px solid rgba(86,75, 75, .5);
     width: 417px;
     height: 570px;
     position: absolute;
@@ -475,16 +477,16 @@ button > img {
 }
 .slider button {
     position: absolute;
-    border: 1px solid lightblue;
+    border: 1px solid #bfd0c8;
     height: 40px;
     width: 60px;
-    border-radius: 8px;
+    border-radius: 20px;
     top: 267px;
     z-index: 1;
     cursor: pointer;
     font-size: 40px;
     line-height: 40px;
-    color: lightblue;
+    color: #bfd0c8;
     opacity: 0;
 }
 .slider .to_left {
@@ -507,14 +509,14 @@ button > img {
 .slider_points span {
 	flex: none;
     border-radius: 50%;
-	border: 1px solid lightblue;
+	border: 1px solid #bfd0c8;
 	height: 22px;
 	width: 22px;
 	cursor: pointer;
     opacity: 0;
 }
 .slider_points span.active {
-    background: lightblue;
+    background: #bfd0c8;
 }
 .slider_desk:hover ~ button,
 .slider button:hover,
