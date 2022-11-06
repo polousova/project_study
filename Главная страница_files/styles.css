@@ -1051,14 +1051,9 @@ header button > img {
     margin: 20px;
 }
 .map iframe {
-    display: block;
     width: 1280px;
     height: 914px;
-    margin: 0 auto;
-    border: 1px solid rgb(86, 75, 75);
-    overflow: hidden;
 }
-
 /*======== footer =========*/
 .wrapperFooter {
     display: flex;
@@ -1233,33 +1228,12 @@ header button > img {
     flex-wrap: wrap;
     row-gap: 20px;
 }
-
-/* =============contact page ============*/
-.map iframe {
-    width: 1020px;
-    height: 728px;
-}
-.sendUsMessage {
-    margin: 20px;
-}
-.address {
-    width: 420px;
-}
-.sendMessage {
-    width: 600px;
-}
-
 }
 
 /*--------------------------------------------------1120*/
 @media screen and (max-width: 1124px) {
     .container {
       max-width: 896px;
-    }
-h1 {
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 32px;
     }
 .blackFriday p {
     font-size: 22px;
@@ -1343,7 +1317,7 @@ header button > img {
 }
 
 .gall {
-    margin: 30px 20px 60px;
+    margin: 30px 20px 600px;
 }
 .gall a > img {
     width: 260px;
@@ -1371,31 +1345,7 @@ body {
 }
 }
 
-/* =========== Карточка товара page ========*/
-.product .price {
-    font-size: 36px;
-    line-height: 52px;
-}
-.offer h1 {
-    font: bold 20px/30px 'Jost';
-}
-
-/* ========== contact page ==========*/
-.map iframe {
-    width: 796px;
-    height: 568px;
-}
-.sendUsMessage {
-    margin: 20px;
-}
-.address {
-    width: 380px;
-}
-.sendMessage {
-    width: 450px;
-}
-
-/*-----------------------------------------------------------896*/
+/*--------------------------------------------------896*/
 @media screen and (max-width: 900px) {
 .container {
       max-width: 746px;
@@ -1403,10 +1353,6 @@ body {
 .action .container {
         gap: 10px;
         height: 50px;
-    }
-h1 {
-        font-size: 18px;
-        line-height: 28px;
     }
 .logo {
         width: 80px;
@@ -1474,82 +1420,65 @@ header button > img {
         height: 50px;
         padding-right: 10px;
     }
-.galInt1, .inter {
-    display: none;
-}
+
 .gall {
-    grid-template-areas: 'a b' 'c d';
-    margin: 30px 60px 60px;
-}
-.col2 li {
-    font: bold 16px/24px 'Jost';
-    font-weight: 600;
-    padding-bottom: 30px;
-}
-.wrapperFooter h3 {
-    font: bold 16px/20px 'Jost';
-    font-weight: 600; 
-}
-.logo2 {
-    width: 120px;
-}
-.social {
-    flex-direction: column;
-    gap: 10px; 
- }
- .social img {
-     display: block;
-     height: 30px;
-     padding: 8px 10px;
- }
- .info {
-    gap: 30px; 
- }
-
- /* ======= product page =========*/
- .product .price {
-    font-size: 16px;
-    line-height: 22px;
-}
-.offer h1 {
-    font: bold 16px/24px 'Jost';
-}
-.offer p {
-    font-size: 14px;
-    line-height: 20px; 
-}
-.bigimage {
-    width: 300px;
-}
-
-/* ==========Корзина page ==========*/
-#USDrate {
-    font: bold 12px/24px "Jost";
-    font-weight: 600;
-    width: 28%;
-}
-.sendMessage input, .sendMessage textarea {
-    width: 86%;
-}
-
-/*=========== contact page ===========*/
-.map iframe {
-    width: 644px;
-    height: 461px;
-}
-.sendUsMessage {
-    margin: 20px;
-}
-.address {
-    width: 280px;
-}
-.sendMessage {
-    width: 370px;
-}
-.address > img {
-    display: block;
-    margin: 30px auto 20px;
-}
+        margin: 40px 20px 100px;
+    }
+    .gall > div {
+        position: relative;
+    }
+    .gall a > img {
+        border-radius: 15px;
+    }
+.gall > div label {
+        bottom: 20px;
+        left: 30px;    
+        font-size: 16px;
+        line-height: 24px;
+    }
+.gall {
+        display: grid;
+        grid-template-areas: 'a b f' 'c d f';
+        gap: 30px;
+        margin: 40px 20px 100px;
+    }
+.gall > div {
+        position: relative;
+    }
+.gall a > img {
+        border-radius: 15px;
+    }
+    .gall > div label {
+        position: absolute;
+        bottom: 30px;
+        left: 40px;    
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 30px;
+        text-transform: uppercase;
+    }
+    .galBasket {
+        grid-area: a;
+    }
+    .galMini {
+         grid-area: b;
+    }
+    .galBag {
+         grid-area: c;
+    }
+    .galRug {
+         grid-area: d;
+    }
+    .galInt1 {
+        grid-area: f;
+    }
+    .inter label{
+       top: 30px; 
+    }
+    .inter img {
+        height: 637px;
+    }
+    
 }
 
 
