@@ -1315,7 +1315,7 @@ header button > img {
     padding-top: 3px;
 }
 .info {
-    gap: 60px; 
+    gap: 40px; 
  }
  .social img {
     height: 30px;
@@ -1594,6 +1594,9 @@ header button > img {
 }
 .address > ul > li {
     font: 14px/20px 'Jost';
+}
+.address > img {
+    width: 260px;
 }
 }
 
