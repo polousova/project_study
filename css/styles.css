@@ -84,8 +84,26 @@ a {
 }
 h1 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 26px;
     line-height: 40px;
+}
+h2 {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 34px;
+}
+h3 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+}
+h4 {
+    font: bold 18px/30px 'Jost';
+}
+p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px; 
 }
 button {
     cursor: pointer;
@@ -339,7 +357,7 @@ header button > img {
 .action {
     background: url('../images/leaves2.png') top no-repeat;
     padding: 10px;
-    color: red;
+    color: black;
     border: 1px solid rgba(86, 75, 75,.4);
     box-shadow: 5px 20px 50px rgba(94, 117, 98, 0.2);
 }
@@ -361,11 +379,8 @@ header button > img {
     height: 60px;
     border-radius: 8px;
 }
-.blackFriday p {
-    font-weight: bold;
-    font-size: 28px;
+.blackFriday h2 {
     color: black;
-    line-height: 34px;
     padding-left: 10px;
 }
 .actiontimer.textTimer {
@@ -378,17 +393,8 @@ header button > img {
     align-items: center;
     gap: 10px;
 }
-.startSaleP {
-    font-weight: bold;
-    font-size: 28px;
+.startSale h2 {
     color: black;
-    line-height: 34px;
-}
-.startSale p {
-    font-weight: bold;
-    font-size: 28px;
-    color: black;
-    line-height: 34px;
     width: 300px;
 }
 .startSale span {
@@ -605,11 +611,11 @@ header button > img {
 .catmenu a {
     color: white;
 }
-.catmenu p, .filters p { 
+.catmenu h2, .filters h2{ 
     font-weight: 600;
     font-size: 26px;
 }
-.catmenu p::before {
+.catmenu h2::before {
     content: "☰";
     padding-right: 15px;
 }
@@ -664,14 +670,13 @@ header button > img {
     text-align: center;
     margin: 0 5px;
 }
-.filters p::before {
+.filters h2::before {
     content: '';
     background: url('../images/filter.svg') center no-repeat;
     background-size: 24px;
     padding-right: 45px;
 }
 .filters h3 {
-    font: 24px/36px "Jost";
     padding: 30px 0;
 }
 #slider-range {
@@ -698,11 +703,9 @@ header button > img {
 }
 .cat-item h3 {
     margin: 5px 20px;
-    font: bold 24px/32px 'Jost';
 }
 .cat-item  p {
     margin-left: 50px;
-    font: 18px/26px 'Jost';
 }
 .cat-item a {
     color:rgb(86, 75, 75);
@@ -963,8 +966,7 @@ header button > img {
     display: block;
     margin: 40px auto 30px;
 }
-.address h3 {
-    font: bold 18px/30px 'Jost';
+.address h4 {
     margin: 30px 0 20px;
 }
 .address > ul > li {
@@ -1193,9 +1195,6 @@ header button > img {
     width: 160px;
     margin: 0 10px;
 }
-.offer h1 {
-    font: bold 26px/40px 'Jost';
-}
 .article {
     font: 24px/32px 'Jost';
     padding: 10px;
@@ -1245,10 +1244,17 @@ h1 {
         font-size: 20px;
         line-height: 32px;
     }
-.blackFriday p {
+.blackFriday {
+        gap: 15px;
+    }
+.blackFriday h2 {
     font-size: 22px;
     line-height: 28px;
     padding-left: 0;
+}
+.startSaleP {
+    font-size: 22px;
+    line-height: 28px;
 }
 .startSaleP {
     font-size: 22px;
@@ -1364,6 +1370,12 @@ body {
     font: bold 20px/30px 'Jost';
 }
 
+/* =========== product page ========*/
+.gallery button {
+    height: 15px;
+    width: 30px;
+}
+
 /* ========== contact page ==========*/
 .map iframe {
     width: 796px;
@@ -1387,6 +1399,9 @@ body {
 .action .container {
         gap: 10px;
         height: 50px;
+    }
+body {
+        font: 16px/22px 'Jost';
     }
 h1 {
         font-size: 18px;
@@ -1430,7 +1445,7 @@ header button > img {
     gap: 5px;
     justify-content: center;
     }
-.blackFriday p {
+.blackFriday h2 {
     display: inline-block;
     width: 60%; 
     font-size: 16px;
@@ -1497,7 +1512,6 @@ header button > img {
     gap: 30px; 
  }
 
-
 /*========== Catalog page ==========*/
 /*.smaller img {
     width: 320px;
@@ -1537,8 +1551,11 @@ header button > img {
 .gallery .rail {
     margin: 0;
 }
-.images {
-    flex: 0 1 70px;
+.gallery {
+    width: 55px;
+    margin: 5px;
+    padding: 5px;
+   
 }
 /* ==========Корзина page ==========*/
 #USDrate {
@@ -1563,6 +1580,7 @@ header button > img {
 }
 .sendMessage {
     width: 390px;
+    height: 540px;
 }
 .address > img {
     display: block;
@@ -1591,8 +1609,47 @@ header button > img {
 }
 }
 
-
-
+/*-----------------------------------------------------------746*/
+@media screen and (max-width: 776px) {
+.container {
+          max-width: 560px;
+        }
+.topmenu {
+            padding: 10px 10px 10px 40px;
+            font-weight: 400;
+        }
+.startSaleP {
+    display: inline-block;
+}
+.startSaleP, .startSale {
+    display: none;
+}
+.blackFriday {
+    justify-content: space-around;
+}
+.logo {
+    width: 50px;
+    margin: 0 10px;
+}
+body {
+    font: 14px/20px 'Jost';
+}
+.login_cart {
+    gap: 20px;
+    margin: 0 10px 0 30px;
+}
+#city {
+    font-size: 12px;
+    line-height: 20px;
+}
+header button > img {
+    height: 14px;
+    padding-top: 3px;
+}
+.forArticle {
+    width: 140px;
+}
+}
 
 /*@media (min-width: 991px) {
   .container {
