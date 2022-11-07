@@ -1526,10 +1526,20 @@ header button > img {
     font-size: 14px;
     line-height: 20px; 
 }
+.bigimage > img {
+    width: 300px;
+    height: 450px;
+}
 .bigimage {
     width: 300px;
+    height: 450px;
 }
-
+.gallery .rail {
+    margin: 0;
+}
+.images {
+    flex: 0 1 70px;
+}
 /* ==========Корзина page ==========*/
 #USDrate {
     font: bold 12px/24px "Jost";
