@@ -866,7 +866,11 @@ header button > img {
     text-align: center;
     width: 100px;
 }
-.table .sum {
+.table .price {
+    text-align: center;
+    width: 100px;
+}
+.table .sumUSD {
     text-align: center;
     width: 100px;
 }

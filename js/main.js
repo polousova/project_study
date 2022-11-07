@@ -8,42 +8,42 @@ let startbasket = [
         name: 'Сумка',
         price: 1500,
         quantity: 100,
-        link: ''
+        link: '',
+        USD_rate: 2
     },
     {
         id: 2,
         name: 'Коврик',
         price: 3000,
         quantity: 10,
-        link: ''
+        link: '',
+        USD_rate: 2
     },
     {
         id: 111,
         name: 'Домик для кошки',
         price: 5000,
         quantity: 1,
-        link: ''
+        link: '',
+        USD_rate: 2 
     }
 ];
 
-let rateUSD;
-
-//getCurrency1();
+let rateUSD; //дописать чтобы сохранять данные а переменную
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://www.cbr-xml-daily.ru/daily_json.js');
+xhr.onreadystatechange = function() {
+    if ((xhr.readyState == 4) && (xhr.status == 200)) {
+        document.getElementById('USDrate').innerHTML = ' Курс RUB/USD сегодня: ' + JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
+            rateUSD = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
+            console.log(rateUSD);
+    }
+};
+xhr.send();
 
 /* functions */
 
-function getCurrency1() {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://www.cbr-xml-daily.ru/daily_json.js');
-    xhr.onreadystatechange = function() {
-        if ((xhr.readyState == 4) && (xhr.status == 200)) {
-            document.getElementById('USDrate').innerHTML = ' Курс RUB/USD сегодня: ' + JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
-                rateUSD = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
-                console.log(rateUSD);
-        }
-    };
-    xhr.send();
-}
+
 
 function getModalWindow(idname) {
     $('body').append('<div class="screener"></div><div class="modal" id="'+idname+'"><button type="button" class="close">&times;</button></div>');
@@ -104,22 +104,25 @@ function multiple(num, word1, word2, word3) {
 }
 
 function orderReCount() {
-    getCurrency1();
     let point = $('.table');
     let allsum = 0;
     point.find('tbody tr').each(function(){
         let price = +$(this).find('.price').html();
         let qty = +$(this).find('.qty strong').html();
         let sum = qty * price;
-        //let dollarSum = sum / rateUSD;
-        //console.log(dollarSum);
+        console.log(sum);
+        let dollarSum = sum / rateUSD;
+        dollarSum = dollarSum.toFixed(2);
+        console.log(dollarSum);
         allsum += sum;
         $(this).find('.sum').html(sum);
-        //$(this).find('.sumUSD').html(dollarSum);
+        $(this).find('.sumUSD').html(dollarSum);
     });
     point.find('.allsum span').html(allsum);
-
 }
+
+
+
 function changeOrder(line, num){
     let newnum = +$(line).find('.qty strong').html() + num;
     if (newnum > 0) {
@@ -128,7 +131,7 @@ function changeOrder(line, num){
     }
 }
 /* on ready */
-$(function(){
+$(function(){ 
     $('.topmenu a').each(function(){
         if (this.href == location.href.split('#')[0]) this.className = 'current'; /*динамически добавляет class="current". Если мы находимся на текущей странице (this.href = location.href), к текущему href добавляется класс current*/
     });
@@ -337,14 +340,14 @@ $(function(){
         */
     });
     
-    if ('.order') {
+    if ($('.order').length) {
         let point = $('.table tbody');
         let count = 1;
         let basket = JSON.parse(localStorage.getItem('basket'));
         if (!basket) basket = [];
         basket.push(...startbasket);
         for (let item of basket) {
-            let hlpstr = '<tr data-id="'+item.id+'"><th scope="row" class="index">'+count+'</th><td class="name"><a href="'+item.link+'">'+item.name+'</a></td><td class="qty"><span class="minus">&minus;</span><strong>'+item.quantity+'</strong><span class="plus">&plus;</span></td><td class="price">'+item.price+'</td><td class="sum"></td><td class="delete icon">❌</td></tr>';
+            let hlpstr = '<tr data-id="'+item.id+'"><th scope="row" class="index">'+count+'</th><td class="name"><a href="'+item.link+'">'+item.name+'</a></td><td class="qty"><span class="minus">&minus;</span><strong>'+item.quantity+'</strong><span class="plus">&plus;</span></td><td class="price">'+item.price+'</td><td class="sum"></td><td class="sumUSD">'+item.USD_rate+'</td><td class="delete icon">❌</td></tr>';
             point.append(hlpstr);
             count++;
         }
