@@ -38,7 +38,7 @@ function getCurrency1() {
     xhr.open('GET', 'https://www.cbr-xml-daily.ru/daily_json.js');
     xhr.onreadystatechange = function() {
         if ((xhr.readyState == 4) && (xhr.status == 200)) {
-            //document.getElementById('USDrate').innerHTML = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2) + ' рублей за доллар';
+            document.getElementById('USDrate').innerHTML = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2) + ' рублей за доллар';
             rateUSD = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
         }
     };
@@ -115,13 +115,13 @@ function orderReCount() {
         let price = +$(this).find('.price').html();
         let qty = +$(this).find('.qty strong').html();
         let sum = qty * price;
-        //console.log(sum);
-        //let dollarSum = sum / rateUSD;
-        //dollarSum = dollarSum.toFixed(2);
-        //console.log(dollarSum);
+        console.log(sum);
+        let dollarSum = sum / rateUSD;
+        dollarSum = dollarSum.toFixed(2);
+        console.log(dollarSum);
         allsum += sum;
         $(this).find('.sum').html(sum);
-        //$(this).find('.sumUSD').html(dollarSum);
+        $(this).find('.sumUSD').html(dollarSum);
     });
     point.find('.allsum span').html(allsum);
 }
