@@ -597,7 +597,6 @@ header button > img {
 }
 .catalog aside {
     width: 320px;
-    flex-shrink: 0;
     background: rgba(94, 117, 98);
     color: white;
 }
@@ -953,7 +952,7 @@ header button > img {
 /* ========contact us ======*/
 .sendUsMessage {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     margin: 40px;
 }
@@ -1141,10 +1140,25 @@ header button > img {
 
 
 /* =========== ADAPTIVE =========*/
+@media (max-width: 1600px) {
+.catalog article {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    row-gap: 20px;
+    }
+}
 @media (max-width: 1400px) {
     .container {
         width: auto;
         margin: 0 40px;
+    }
+    .catalog aside {
+        width: 280px;
+    }
+    .gallery button {
+        height: 25px;
+        width: 40px;
     }
 }
 /*-------------------------------------------------1280*/
@@ -1162,6 +1176,7 @@ header button > img {
     width: 40px;
     font-size: 16px;
     line-height: 24px;
+    margin-right: 10px;
 }
 .startSale {
     gap: 8px;
@@ -1170,6 +1185,7 @@ header button > img {
     width: 40px;
     font-size: 16px;
     line-height: 24px;
+    margin-right: 10px;
 }
 .extend {
     margin-right: 10px;
@@ -1218,7 +1234,7 @@ header button > img {
     row-gap: 20px;
 }
 .catalog .container {
-    justify-content: space-around;
+    justify-content: center;
 }
 
 /* =============contact page ============*/
@@ -1242,13 +1258,13 @@ header button > img {
 @media screen and (max-width: 1124px) {
     .container {
       max-width: 896px;
-    }
+}
 h1 {
         font-weight: bold;
         font-size: 20px;
         line-height: 32px;
-    }
-.blackFriday {
+}
+/*.blackFriday {
         gap: 15px;
     }
 .blackFriday h2 {
@@ -1265,14 +1281,47 @@ h1 {
     line-height: 28px;
 }
 .startSale span {
-    width: 30px;
+    width: 26px;
     font-size: 14px;
     line-height: 20px;
+    padding-right: 12px;
+}
+.textTimer span {
+    width: 26px;
+    font-size: 10px;
+    line-height: 20px;
+    padding-right: 12px;
+}
+.extend {
+    margin-right: 10px;
+}*/
+.blackFriday{
+    gap: 5px;
+    justify-content: center;
+}
+.blackFriday h2 {
+    display: inline-block;
+    width: 60%; 
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    padding-left: 0;    
+}
+.startSaleP {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+}
+.startSale span {
+    width: 24px;
+    font-size: 12px;
+    line-height: 18px;
 }
 .textTimer span {
     width: 30px;
     font-size: 10px;
-    line-height: 20px;
+    line-height: 16px;
 }
 .extend {
     margin-right: 10px;
@@ -1448,7 +1497,7 @@ header button > img {
 .blackFriday{
     gap: 5px;
     justify-content: center;
-    }
+}
 .blackFriday h2 {
     display: inline-block;
     width: 60%; 
@@ -1456,27 +1505,27 @@ header button > img {
     line-height: 18px;
     font-weight: 600;
     padding-left: 0;    
-    }
+}
 .startSaleP {
     display: inline-block;
     font-size: 16px;
     line-height: 18px;
     font-weight: 600;
-    }
+}
 .startSale span {
         width: 24px;
         font-size: 12px;
         line-height: 18px;
-    }
+}
 .textTimer span {
         width: 30px;
         font-size: 10px;
         line-height: 16px;
-    }
+}
 .extend {
         margin-right: 10px;
-    }
- .article {
+}
+.article {
         font: 18px/26px 'Jost';
         padding: 10px;
     }
@@ -1584,7 +1633,7 @@ header button > img {
 }
 .sendMessage {
     width: 390px;
-    height: 540px;
+    height: 505px;
 }
 .address > img {
     display: block;
@@ -1616,12 +1665,12 @@ header button > img {
 /*-----------------------------------------------------------746*/
 @media screen and (max-width: 776px) {
 .container {
-          max-width: 560px;
-        }
+    max-width: 560px;
+}
 .topmenu {
-            padding: 10px 10px 10px 40px;
-            font-weight: 400;
-        }
+    padding: 10px 10px 10px 40px;
+    font-weight: 400;
+}
 .startSaleP {
     display: inline-block;
 }
@@ -1652,7 +1701,6 @@ header button > img {
 }
 .forArticle {
     width: 140px;
-}
 }
 .wrapperFooter {
     gap: 20px;
@@ -1703,9 +1751,6 @@ p {
 .social img {
     height: 20px;
     padding: 5px 6px;
-}
-.catalog .container {
-    justify-content: center;
 }
 .catalog aside {
     width: 180px;
@@ -1781,7 +1826,6 @@ p {
     width: 45px;
     margin: 5px;
     padding: 5px;
-   
 }
 .table .qty span {
     border-radius: 2px;
@@ -1807,7 +1851,7 @@ p {
 }
 .sendMessage {
     width: 300px;
-    height: 440px;
+    height: 460px;
     padding: 12px;
     border-radius: 6px;
     box-shadow: 5px 10px 30px rgba(94, 117, 98, 0.4);
