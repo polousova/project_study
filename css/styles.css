@@ -1049,12 +1049,12 @@ header button > img {
 /*======== footer =========*/
 .wrapperFooter {
     display: flex;
-    /*justify-content: center;*/
+    justify-content: center;
     gap: 100px;
     margin-top: 20px;
 }
 .logo2 {
-    flex: 0 0 200px;
+    width: 200px;
     margin: 0 20px;
     align-self: center;
 }
@@ -1081,8 +1081,7 @@ header button > img {
 .info {
    display: flex;
    justify-content: space-between;
-   flex: 1 1 auto;
-   /*gap: 120px; */
+   gap: 120px; 
 }
 .wrapperSocial {
     text-align: center;
@@ -1145,15 +1144,14 @@ header button > img {
 @media (max-width: 1400px) {
     .container {
         width: auto;
-        max-width: none;
         margin: 0 40px;
     }
 }
 /*-------------------------------------------------1280*/
 @media screen and (max-width: 1284px){
-  /*.container {
+  .container {
     max-width: 1120px;
-  }*/
+  }
 /* ===== index page =======*/ 
 
 .startSaleP {
@@ -1198,7 +1196,7 @@ header button > img {
     gap: 60px;
 }
 .logo2 {
-    flex: 0 0 160px;
+    width: 160px;
     margin: 0 10px;
 }
 .article {
@@ -1242,9 +1240,9 @@ header button > img {
 
 /*--------------------------------------------------1120*/
 @media screen and (max-width: 1124px) {
-    /*.container {
+    .container {
       max-width: 896px;
-    }*/
+    }
 h1 {
         font-weight: bold;
         font-size: 20px;
@@ -1308,7 +1306,7 @@ header button > img {
     padding-top: 3px;
 }
 .info {
-    /*gap: 40px; */
+    gap: 40px; 
  }
  .social img {
     height: 30px;
@@ -1318,7 +1316,7 @@ header button > img {
     gap: 40px;
 }
 .logo2 {
-    flex: 0 0 140px;
+    width: 140px;
     margin: 0 10px;
 }
 .login_cart {
@@ -1399,9 +1397,9 @@ body {
 
 /*-----------------------------------------------------------896*/
 @media screen and (max-width: 900px) {
-/*.container {
+.container {
       max-width: 746px;
-    }*/
+    }
 .action .container {
         gap: 10px;
         height: 50px;
@@ -1503,7 +1501,7 @@ header button > img {
     font-weight: 600; 
 }
 .logo2 {
-    flex: 0 0 120px;
+    width: 120px;
 }
 .social {
     flex-direction: column;
@@ -1515,7 +1513,7 @@ header button > img {
      padding: 8px 10px;
  }
  .info {
-    /*gap: 30px; */
+    gap: 30px; 
  }
 
 /*========== Catalog page ==========*/
@@ -1617,9 +1615,9 @@ header button > img {
 
 /*-----------------------------------------------------------746*/
 @media screen and (max-width: 776px) {
-/*.container {
+.container {
           max-width: 560px;
-        }*/ 
+        }
 .topmenu {
             padding: 10px 10px 10px 40px;
             font-weight: 400;
@@ -1655,8 +1653,6 @@ header button > img {
 .forArticle {
     width: 140px;
 }
-.logo2 {
-    flex: 0 0 80px;
 }
 .wrapperFooter {
     gap: 20px;
@@ -1762,8 +1758,6 @@ p {
     font-size: 12px;
     line-height: 20px;
 }
-
-
 .product .price {
     font-size: 14px;
     line-height: 22px;
@@ -1845,13 +1839,144 @@ p {
     width: 94%;
 }
 .sendMessage button {   
-    height: 30px;
     font-size: 12px;
     margin-top: 20px;
 }
+.table td.delete {
+    width: 60px;
+}
+.table .price {
+    width: 70px;
+}
+.catmenu ul ul::before {
+    top: -22px;
+}
+.cat-item h3 {
+    margin: 5px 5px;
+}
+.catalog article {
+    row-gap: 10px;
+}
+#city {
+    padding-left: 100px;
+}
+}
+
+/*-----------------------------------------------------------530*/
+@media screen and (max-width: 530px) {
+#city {
+    padding-left: 70px;
+    font-size: 10px;
+    line-height: 14px;
+    }
+body {
+    font: 10px/16px 'Jost';
+    }
+h1 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    }
+h2 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    }
+h3 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    }
+h4 {
+    font: bold 10px/16px 'Jost';
+    }
+p {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 18px; 
+    }
+.action .container {
+        gap: 5px;
+        height: 40px;
+    }
+.blackFriday h2 {
+    font-size: 12px;
+    line-height: 16px; 
+    }
+.blackFriday > img {
+    height: 40px;
+    border-radius: 6px;
+}
+.topmenu {
+    padding: 5px;
+    font-weight: 400;
+}
+.topmenu a::before {
+    padding-right: 5px;
+}
+.logo {
+    width: 36px;
+}
+header input {
+    padding: 0 10px;
+}
+header button > img {
+    height: 10px;
+    padding-top: 2px;
+}
+.cart > img {
+    height: 14px;
+    padding-top: 0;
+}
+.login > img {
+    height: 14px;
+    padding-top: 0;
+}
+.login_cart {
+    gap: 10px;
+    margin: 0 6px 0 10px;
+}
+.article {
+    font: 10px/18px 'Jost';
+    padding: 10px;
+}
+.logo3 {
+    height: 20px;
+}
+.forArticle {
+    width: 100px;
+}
+.gall a > img {
+    width: 130px;
+    border-radius: 6px;
+}
+.gall > div label {
+    bottom: 10px;
+    left: 10px;    
+    font-size: 12px;
+    line-height: 18px;
+}
+.gall {
+    margin: 10px 20px 20px;
+}
+.slider {
+    display: none;
+}
+.logo2 {
+    flex: 0 0 60px;
+}
+.wrapperFooter h3 {
+    font: bold 12px/20px 'Jost';
+}
+.col2 li {
+    font: bold 12px/20px 'Jost';
+}
+
 
 
 }
+
+
 
 /*@media (min-width: 991px) {
   .container {
