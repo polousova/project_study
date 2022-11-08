@@ -1,7 +1,8 @@
 /* variables */
+
 let citylist = ['Москва', 'Караганда', 'Магадан', 'Люберцы', 'Севастополь', 'Ярославль', 'Вологда', 'Владивосток', 'Барнаул', 'Петрозаводск', 'Самара', 'Саратов', 'Тверь', 'Вашингтон', 'Париж', 'Пермь', 'Екатеринбург', 'Новосибирск', 'Калининград'];
 let rangemin = 0;
-let rangemax = 10000;
+let rangemax = 5000;
 let startbasket = [
     {
         id: 1,
@@ -9,7 +10,7 @@ let startbasket = [
         price: 1500,
         quantity: 100,
         link: '',
-        USD_rate: 2
+        USD_rate: 1
     },
     {
         id: 2,
@@ -17,7 +18,7 @@ let startbasket = [
         price: 3000,
         quantity: 10,
         link: '',
-        USD_rate: 2
+        USD_rate: 1
     },
     {
         id: 111,
@@ -25,21 +26,25 @@ let startbasket = [
         price: 5000,
         quantity: 1,
         link: '',
-        USD_rate: 2 
+        USD_rate: 1
     }
 ];
 
-let rateUSD; //дописать чтобы сохранять данные а переменную
-let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://www.cbr-xml-daily.ru/daily_json.js');
-xhr.onreadystatechange = function() {
-    if ((xhr.readyState == 4) && (xhr.status == 200)) {
-        document.getElementById('USDrate').innerHTML = ' Курс RUB/USD сегодня: ' + JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
+let rateUSD;
+getCurrency1();
+
+function getCurrency1() {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://www.cbr-xml-daily.ru/daily_json.js');
+    xhr.onreadystatechange = function() {
+        if ((xhr.readyState == 4) && (xhr.status == 200)) {
+            //document.getElementById('USDrate').innerHTML = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2) + ' рублей за доллар';
             rateUSD = JSON.parse(xhr.response).Valute.USD.Value.toFixed(2);
-            console.log(rateUSD);
-    }
-};
-xhr.send();
+        }
+    };
+    xhr.send();
+}
+
 
 /* functions */
 
@@ -110,13 +115,13 @@ function orderReCount() {
         let price = +$(this).find('.price').html();
         let qty = +$(this).find('.qty strong').html();
         let sum = qty * price;
-        console.log(sum);
-        let dollarSum = sum / rateUSD;
-        dollarSum = dollarSum.toFixed(2);
-        console.log(dollarSum);
+        //console.log(sum);
+        //let dollarSum = sum / rateUSD;
+        //dollarSum = dollarSum.toFixed(2);
+        //console.log(dollarSum);
         allsum += sum;
         $(this).find('.sum').html(sum);
-        $(this).find('.sumUSD').html(dollarSum);
+        //$(this).find('.sumUSD').html(dollarSum);
     });
     point.find('.allsum span').html(allsum);
 }
@@ -132,6 +137,7 @@ function changeOrder(line, num){
 }
 /* on ready */
 $(function(){ 
+
     $('.topmenu a').each(function(){
         if (this.href == location.href.split('#')[0]) this.className = 'current'; /*динамически добавляет class="current". Если мы находимся на текущей странице (this.href = location.href), к текущему href добавляется класс current*/
     });
@@ -382,6 +388,10 @@ $(function(){
             if (!form.phone.value.match(/^((\+7)|(8))?\s?\(?\d{3}\)?\s?\d{3}\-?\d{2}\-?\d{2}$/)) {
                 $('form #phone').addClass('is-invalid').parents('.mb-3').append('<div class="invalid-feedback">Должен быть указан телефон!</div>');
                 valid = false;
+            }
+            if (!form.agree.checked) {
+                valid = false;
+                console.log('not checked');
             }
             if (valid) {
                 let products = [];

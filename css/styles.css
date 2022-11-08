@@ -1049,12 +1049,12 @@ header button > img {
 /*======== footer =========*/
 .wrapperFooter {
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     gap: 100px;
     margin-top: 20px;
 }
 .logo2 {
-    width: 200px;
+    flex: 0 0 200px;
     margin: 0 20px;
     align-self: center;
 }
@@ -1081,7 +1081,8 @@ header button > img {
 .info {
    display: flex;
    justify-content: space-between;
-   gap: 120px; 
+   flex: 1 1 auto;
+   /*gap: 120px; */
 }
 .wrapperSocial {
     text-align: center;
@@ -1144,14 +1145,15 @@ header button > img {
 @media (max-width: 1400px) {
     .container {
         width: auto;
+        max-width: none;
         margin: 0 40px;
     }
 }
 /*-------------------------------------------------1280*/
 @media screen and (max-width: 1284px){
-  .container {
+  /*.container {
     max-width: 1120px;
-  }
+  }*/
 /* ===== index page =======*/ 
 
 .startSaleP {
@@ -1196,7 +1198,7 @@ header button > img {
     gap: 60px;
 }
 .logo2 {
-    width: 160px;
+    flex: 0 0 160px;
     margin: 0 10px;
 }
 .article {
@@ -1240,9 +1242,9 @@ header button > img {
 
 /*--------------------------------------------------1120*/
 @media screen and (max-width: 1124px) {
-    .container {
+    /*.container {
       max-width: 896px;
-    }
+    }*/
 h1 {
         font-weight: bold;
         font-size: 20px;
@@ -1306,7 +1308,7 @@ header button > img {
     padding-top: 3px;
 }
 .info {
-    gap: 40px; 
+    /*gap: 40px; */
  }
  .social img {
     height: 30px;
@@ -1316,7 +1318,7 @@ header button > img {
     gap: 40px;
 }
 .logo2 {
-    width: 140px;
+    flex: 0 0 140px;
     margin: 0 10px;
 }
 .login_cart {
@@ -1397,9 +1399,9 @@ body {
 
 /*-----------------------------------------------------------896*/
 @media screen and (max-width: 900px) {
-.container {
+/*.container {
       max-width: 746px;
-    }
+    }*/
 .action .container {
         gap: 10px;
         height: 50px;
@@ -1501,7 +1503,7 @@ header button > img {
     font-weight: 600; 
 }
 .logo2 {
-    width: 120px;
+    flex: 0 0 120px;
 }
 .social {
     flex-direction: column;
@@ -1513,7 +1515,7 @@ header button > img {
      padding: 8px 10px;
  }
  .info {
-    gap: 30px; 
+    /*gap: 30px; */
  }
 
 /*========== Catalog page ==========*/
@@ -1615,9 +1617,9 @@ header button > img {
 
 /*-----------------------------------------------------------746*/
 @media screen and (max-width: 776px) {
-.container {
+/*.container {
           max-width: 560px;
-        }
+        }*/ 
 .topmenu {
             padding: 10px 10px 10px 40px;
             font-weight: 400;
@@ -1653,6 +1655,202 @@ header button > img {
 .forArticle {
     width: 140px;
 }
+.logo2 {
+    flex: 0 0 80px;
+}
+.wrapperFooter {
+    gap: 20px;
+}
+body {
+    font: 12px/18px 'Jost';
+}
+h1 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+}
+h2 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+}
+h3 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+}
+h4 {
+    font: bold 14px/26px 'Jost';
+}
+p {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px; 
+}
+.leaf {
+    padding-left: 22px;
+    margin-right: 5px;
+    line-height: 16px;
+}
+.leaf::before {
+    height: 16px;
+    background-size: 16px;
+    padding-right: 15px;
+}
+.col2 li {
+    font: bold 14px/24px 'Jost';
+    padding-bottom: 20px;
+}
+.wrapperFooter h3 {
+    font: bold 14px/24px 'Jost';
+}
+.social img {
+    height: 20px;
+    padding: 5px 6px;
+}
+.catalog .container {
+    justify-content: center;
+}
+.catalog aside {
+    width: 180px;
+}
+.catmenu h2, .filters h2{ 
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+}
+.catmenu > ul > li {
+    padding: 5px 10px 5px 0;
+    /*border-top: 1px dashed white;*/
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: bold;
+}
+.catmenu ul ul {
+    margin: 0;
+    position: relative;
+    left: 20px;
+    font: 12px/20px 'Jost';
+}
+.filters h2::before {
+    background-size: 16px;
+    padding-right: 20px;
+}
+.filters input {
+    border-radius: 4px;
+    font: bold 12px/20px 'Jost';
+    padding: 0;
+    width: 36px;
+    margin: 0 3px;
+}
+.filters h2::before {
+    content: '';
+    background: url('../images/filter.svg') center no-repeat;
+    background-size: 16px;
+    padding-right: 20px;
+}
+.filters h3 {
+    padding: 10px 0;
+}
+#slider-range {
+    margin: 5px 0;
+}
+.gift::after {
+    display: none;
+}
+.catmenu li li {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+
+.product .price {
+    font-size: 14px;
+    line-height: 22px;
+}
+.offer h1 {
+    font: bold 16px/24px 'Jost';
+}
+.offer p {
+    font-size: 12px;
+    line-height: 20px; 
+}
+.bigimage > img {
+    width: 240px;
+    height: 360px;
+}
+.bigimage {
+    width: 240px;
+    height: 360px;
+}
+.gallery {
+    width: 45px;
+    margin: 5px;
+    padding: 5px;
+   
+}
+.table .qty span {
+    border-radius: 2px;
+    width: 14px;
+    height: 14px;
+    line-height: 16px;
+}
+.table .qty .minus {
+    margin-right: 10px;
+}
+.table .qty .plus {
+    margin-left: 10px;
+}
+.table .qty {
+    text-align: center;
+    width: 120px;
+}
+.table .qty strong {
+    min-width: 40px;
+}
+.address {
+    width: 200px;
+}
+.sendMessage {
+    width: 300px;
+    height: 440px;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 5px 10px 30px rgba(94, 117, 98, 0.4);
+}
+.address > img {
+    width: 180px;
+}
+.address > img {
+    margin: 30px auto 20px;
+}
+.address h4 {
+    margin: 10px 0 5px;
+}
+.address > ul > li {
+    font: 14px/24px 'Jost';
+}
+.map iframe {
+    width: 500px;
+    height: 358px;
+}
+.sendMessage label {
+    font: bold 12px/20px 'Jost';
+    margin-top: 6px;
+}
+.sendMessage input, .sendMessage textarea {
+    border-radius: 6px;
+    padding: 10px 10px 5px 5px;
+    margin: 10px auto;
+    width: 94%;
+}
+.sendMessage button {   
+    height: 30px;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+
 }
 
 /*@media (min-width: 991px) {
