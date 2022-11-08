@@ -44,7 +44,7 @@ function getCurrency1() {
     };
     xhr.send();
 }
-
+getCurrency1();
 
 /* functions */
 
